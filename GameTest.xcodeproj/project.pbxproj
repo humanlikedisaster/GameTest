@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		426059581D554A1700145572 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 426059571D554A1700145572 /* main.m */; };
+		4260595B1D554A1700145572 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4260595A1D554A1700145572 /* AppDelegate.m */; };
+		426059611D554A1700145572 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4260595F1D554A1700145572 /* Main.storyboard */; };
+		426059631D554A1700145572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426059621D554A1700145572 /* Assets.xcassets */; };
+		426059661D554A1700145572 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426059641D554A1700145572 /* LaunchScreen.storyboard */; };
+		426059701D554AC500145572 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4260596F1D554AC500145572 /* ViewController.m */; };
+		426059731D554C4600145572 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 426059721D554C4600145572 /* NetworkManager.m */; };
+		426059771D554C7100145572 /* FeedViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426059761D554C7100145572 /* FeedViewModel.m */; };
+		4260597B1D554C9000145572 /* GameViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4260597A1D554C9000145572 /* GameViewModel.m */; };
+		4260597E1D554CB000145572 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4260597D1D554CB000145572 /* AccountManager.m */; };
+		8ABFC42C29EEF680688B4CC7 /* Pods_GameTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60684A37637293E743D74FDB /* Pods_GameTest.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05856AB0573953FBC8D4CC4E /* Pods-GameTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameTest/Pods-GameTest.debug.xcconfig"; sourceTree = "<group>"; };
+		426059531D554A1600145572 /* GameTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		426059571D554A1700145572 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		426059591D554A1700145572 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4260595A1D554A1700145572 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		426059601D554A1700145572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		426059621D554A1700145572 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		426059651D554A1700145572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		426059671D554A1700145572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4260596E1D554AC500145572 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4260596F1D554AC500145572 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		426059711D554C4600145572 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = GameTest/Model/NetworkManager.h; sourceTree = SOURCE_ROOT; };
+		426059721D554C4600145572 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = GameTest/Model/NetworkManager.m; sourceTree = SOURCE_ROOT; };
+		426059751D554C7100145572 /* FeedViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedViewModel.h; path = ViewModel/FeedViewModel.h; sourceTree = "<group>"; };
+		426059761D554C7100145572 /* FeedViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedViewModel.m; path = ViewModel/FeedViewModel.m; sourceTree = "<group>"; };
+		426059791D554C9000145572 /* GameViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameViewModel.h; path = ViewModel/GameViewModel.h; sourceTree = "<group>"; };
+		4260597A1D554C9000145572 /* GameViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewModel.m; path = ViewModel/GameViewModel.m; sourceTree = "<group>"; };
+		4260597C1D554CB000145572 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountManager.h; path = Model/AccountManager.h; sourceTree = "<group>"; };
+		4260597D1D554CB000145572 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountManager.m; path = Model/AccountManager.m; sourceTree = "<group>"; };
+		60684A37637293E743D74FDB /* Pods_GameTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC4E9381B9D3CD36ECE934FA /* Pods-GameTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameTest/Pods-GameTest.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		426059501D554A1600145572 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ABFC42C29EEF680688B4CC7 /* Pods_GameTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14C52ABE21F16B8B147CF787 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05856AB0573953FBC8D4CC4E /* Pods-GameTest.debug.xcconfig */,
+				AC4E9381B9D3CD36ECE934FA /* Pods-GameTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3499BD6A7A38AD1164FF86BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60684A37637293E743D74FDB /* Pods_GameTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4260594A1D554A1600145572 = {
+			isa = PBXGroup;
+			children = (
+				426059551D554A1600145572 /* GameTest */,
+				426059541D554A1600145572 /* Products */,
+				14C52ABE21F16B8B147CF787 /* Pods */,
+				3499BD6A7A38AD1164FF86BC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		426059541D554A1600145572 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				426059531D554A1600145572 /* GameTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		426059551D554A1600145572 /* GameTest */ = {
+			isa = PBXGroup;
+			children = (
+				426059781D554C7600145572 /* ViewModel */,
+				426059741D554C4E00145572 /* Model */,
+				4260596D1D554AC500145572 /* View */,
+				426059591D554A1700145572 /* AppDelegate.h */,
+				4260595A1D554A1700145572 /* AppDelegate.m */,
+				4260595F1D554A1700145572 /* Main.storyboard */,
+				426059621D554A1700145572 /* Assets.xcassets */,
+				426059641D554A1700145572 /* LaunchScreen.storyboard */,
+				426059671D554A1700145572 /* Info.plist */,
+				426059561D554A1600145572 /* Supporting Files */,
+			);
+			path = GameTest;
+			sourceTree = "<group>";
+		};
+		426059561D554A1600145572 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				426059571D554A1700145572 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4260596D1D554AC500145572 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4260596E1D554AC500145572 /* ViewController.h */,
+				4260596F1D554AC500145572 /* ViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		426059741D554C4E00145572 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4260597C1D554CB000145572 /* AccountManager.h */,
+				4260597D1D554CB000145572 /* AccountManager.m */,
+				426059711D554C4600145572 /* NetworkManager.h */,
+				426059721D554C4600145572 /* NetworkManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		426059781D554C7600145572 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				426059791D554C9000145572 /* GameViewModel.h */,
+				4260597A1D554C9000145572 /* GameViewModel.m */,
+				426059751D554C7100145572 /* FeedViewModel.h */,
+				426059761D554C7100145572 /* FeedViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		426059521D554A1600145572 /* GameTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4260596A1D554A1700145572 /* Build configuration list for PBXNativeTarget "GameTest" */;
+			buildPhases = (
+				3EF0C5A12A47B8BA4AD72AB0 /* [CP] Check Pods Manifest.lock */,
+				4260594F1D554A1600145572 /* Sources */,
+				426059501D554A1600145572 /* Frameworks */,
+				426059511D554A1600145572 /* Resources */,
+				A4DDA35800D27F7879CA17A9 /* [CP] Embed Pods Frameworks */,
+				0D911C785860515E4187196F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GameTest;
+			productName = GameTest;
+			productReference = 426059531D554A1600145572 /* GameTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4260594B1D554A1600145572 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = TestGameView;
+				TargetAttributes = {
+					426059521D554A1600145572 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 4260594E1D554A1600145572 /* Build configuration list for PBXProject "GameTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4260594A1D554A1600145572;
+			productRefGroup = 426059541D554A1600145572 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				426059521D554A1600145572 /* GameTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		426059511D554A1600145572 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				426059661D554A1700145572 /* LaunchScreen.storyboard in Resources */,
+				426059631D554A1700145572 /* Assets.xcassets in Resources */,
+				426059611D554A1700145572 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D911C785860515E4187196F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameTest/Pods-GameTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EF0C5A12A47B8BA4AD72AB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A4DDA35800D27F7879CA17A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameTest/Pods-GameTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4260594F1D554A1600145572 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4260597B1D554C9000145572 /* GameViewModel.m in Sources */,
+				426059731D554C4600145572 /* NetworkManager.m in Sources */,
+				426059701D554AC500145572 /* ViewController.m in Sources */,
+				4260597E1D554CB000145572 /* AccountManager.m in Sources */,
+				426059771D554C7100145572 /* FeedViewModel.m in Sources */,
+				4260595B1D554A1700145572 /* AppDelegate.m in Sources */,
+				426059581D554A1700145572 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4260595F1D554A1700145572 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				426059601D554A1700145572 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		426059641D554A1700145572 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				426059651D554A1700145572 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		426059681D554A1700145572 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		426059691D554A1700145572 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4260596B1D554A1700145572 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05856AB0573953FBC8D4CC4E /* Pods-GameTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GameTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.game.GameTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4260596C1D554A1700145572 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC4E9381B9D3CD36ECE934FA /* Pods-GameTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GameTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.game.GameTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4260594E1D554A1600145572 /* Build configuration list for PBXProject "GameTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				426059681D554A1700145572 /* Debug */,
+				426059691D554A1700145572 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4260596A1D554A1700145572 /* Build configuration list for PBXNativeTarget "GameTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4260596B1D554A1700145572 /* Debug */,
+				4260596C1D554A1700145572 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4260594B1D554A1600145572 /* Project object */;
+}

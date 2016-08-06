@@ -17,6 +17,8 @@
 
 @implementation AccountViewModel
 
+#pragma mark - Helper Method
+
 + (BOOL)textIsValidEmailFormat:(NSString *)text
 {
     BOOL stricterFilter = NO;
@@ -26,6 +28,8 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:text];
 }
+
+#pragma mark - Lifecycle
 
 - (instancetype)init
 {
@@ -37,10 +41,14 @@
     return self;
 }
 
+#pragma mark - Public
+
 - (void)setCreditionals:(NSString *)anUserName password:(NSString *)aPassword
 {
     [self.accountManager setUserName:anUserName withPassword:aPassword];
 }
+
+#pragma mark - Getters
 
 - (NSString *)userName
 {

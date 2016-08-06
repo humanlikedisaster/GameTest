@@ -24,6 +24,8 @@
 
 @implementation LoginViewController
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,6 +57,7 @@
     }
 }
 
+#pragma mark - Private
 
 - (void)login
 {

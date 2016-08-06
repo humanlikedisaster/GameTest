@@ -20,6 +20,8 @@
 
 @implementation GamesViewController
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,10 +41,14 @@
     NSLog(@"GamesViewController was dealloceted");
 }
 
+#pragma mark - Public
+
 - (void)setGamesViewModel: (GamesFeedViewModel *)aGamesViewModel
 {
     self.feedViewModel = aGamesViewModel;
 }
+
+#pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

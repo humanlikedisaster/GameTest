@@ -21,6 +21,8 @@ static NSString *kNetworkManagerFeedURL = @"http://backend1.lordsandknights.com/
 
 @implementation NetworkManager
 
+#pragma mark - Lifecycle
+
 - (instancetype)init
 {
     self = [super init];
@@ -32,6 +34,8 @@ static NSString *kNetworkManagerFeedURL = @"http://backend1.lordsandknights.com/
     return self;
 }
 
+#pragma mark - Public
+
 - (RACSignal *)getFeedWithUserName:(NSString *)anUserName password:(NSString *)aPassword
 {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber)
@@ -42,29 +46,29 @@ static NSString *kNetworkManagerFeedURL = @"http://backend1.lordsandknights.com/
                 anUserName, aPassword, [DeviceHelper deviceType], [DeviceHelper deviceIdentifier]];
             [urlRequest setHTTPBody:[httpBody dataUsingEncoding:NSUTF8StringEncoding]];
             self.dataTask = [self.urlSession dataTaskWithRequest:urlRequest completionHandler:^ (NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+            {
+                if (nil == error)
                 {
-                    if (nil == error)
+                    NSError *parseError;
+                    NSPropertyListFormat format;
+
+                    NSDictionary* plist = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:&format error:&parseError];
+
+                    if (nil != plist[@"allAvailableWorlds"])
                     {
-                        NSError *parseError;
-                        NSPropertyListFormat format;
-
-                        NSDictionary* plist = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:&format error:&parseError];
-
-                        if (nil != plist[@"allAvailableWorlds"])
-                        {
-                            [subscriber sendNext:plist];
-                            [subscriber sendCompleted];
-                        }
-                        else
-                        {
-                            [subscriber sendError:[NSError errorWithDomain:@"download.worlds.error" code:-999 userInfo:plist]];
-                        }
+                        [subscriber sendNext:plist];
+                        [subscriber sendCompleted];
                     }
                     else
                     {
-                        [subscriber sendError:error];
+                        [subscriber sendError:[NSError errorWithDomain:@"download.worlds.error" code:-999 userInfo:plist]];
                     }
-                }];
+                }
+                else
+                {
+                    [subscriber sendError:error];
+                }
+            }];
             [self.dataTask resume];
 
             return nil;

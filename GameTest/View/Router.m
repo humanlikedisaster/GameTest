@@ -23,6 +23,8 @@
 
 @implementation Router
 
+#pragma mark - Singletone
+
 + (instancetype)sharedInstance
 {
     static dispatch_once_t onceToken;
@@ -34,6 +36,8 @@
     });
     return router;
 }
+
+#pragma mark - Public
 
 - (RACSignal *)openGames:(AccountViewModel *)anAccountViewModel
 {
@@ -65,7 +69,7 @@
 
 - (void)showError:(NSError *)anError onViewController:(UIViewController *)anViewController withTryAgainBlock:(void (^)())tryAgainBlock
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network error" message:@"There is network error, please try again!" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network error" message:@"There is network error, please try again or come back then it will be internet connection!" preferredStyle:UIAlertControllerStyleAlert];
 
     [alertController addAction:[UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
     {

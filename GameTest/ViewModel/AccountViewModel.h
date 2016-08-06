@@ -10,10 +10,10 @@
 
 @interface AccountViewModel : NSObject
 
-+ (BOOL)textIsValidEmailFormat:(NSString *)text;
-- (void)setCreditionals:(NSString *)anUserName password:(NSString *)aPassword;
-
 @property (nonatomic, copy, readonly) NSString *userName;
 @property (nonatomic, copy, readonly) NSString *password;
+
++ (BOOL)textIsValidEmailFormat:(NSString *)text;
+- (void)setCreditionals:(NSString *)anUserName password:(NSString *)aPassword;
 
 @end

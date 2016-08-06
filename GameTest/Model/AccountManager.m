@@ -9,7 +9,7 @@
 #import "AccountManager.h"
 #import <SAMKeychain/SAMKeychain.h>
 
-static NSString *kAccountManagerServiceName = @"GameTestServiceNameKeychain";
+static NSString *kAccountManagerServiceName = @"GameFeedTestServiceNameKeychain";
 
 @interface AccountManager()
 
@@ -18,7 +18,11 @@ static NSString *kAccountManagerServiceName = @"GameTestServiceNameKeychain";
 
 @end
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 @implementation AccountManager
+
+#pragma mark - Lifecycle
 
 - (instancetype)init
 {
@@ -37,8 +41,15 @@ static NSString *kAccountManagerServiceName = @"GameTestServiceNameKeychain";
     return self;
 }
 
+#pragma mark - Public
+
 - (void)setUserName:(NSString *)anUserName withPassword:(NSString *)anPassword
 {
+    if (self.userName.length > 0)
+    {
+        [SAMKeychain deletePasswordForService:kAccountManagerServiceName account:self.userName];
+    }
+
     self.userName = anUserName;
     self.userPassword = anPassword;
     [SAMKeychain setPassword:anPassword forService:kAccountManagerServiceName account:anUserName];

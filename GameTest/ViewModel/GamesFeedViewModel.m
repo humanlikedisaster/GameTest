@@ -16,6 +16,8 @@
 
 @end
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 @interface GamesFeedViewModel ()
 
 @property (strong, nonatomic) AccountViewModel *accountViewModel;
@@ -27,6 +29,8 @@
 @end
 
 @implementation GamesFeedViewModel
+
+#pragma mark - Lifecycle
 
 - (instancetype)initWithAccountViewModel: (AccountViewModel *)anAccountViewModel
 {
@@ -47,6 +51,8 @@
 {
     NSLog(@"GamesFeedViewModel deallocated");
 }
+
+#pragma mark - Private
 
 - (void)getGamesFeed
 {

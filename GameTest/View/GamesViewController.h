@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class GamesFeedViewModel;
+
 @interface GamesViewController : UITableViewController
+
+- (void)setGamesViewModel: (GamesFeedViewModel *)aGamesViewModel;
 
 @end

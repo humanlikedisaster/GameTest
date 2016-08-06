@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextView;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIView *greyView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) AccountViewModel *accountViewModel;
 
 @end
@@ -33,13 +35,35 @@
         {
             return @([AccountViewModel textIsValidEmailFormat:emailText] && passwordText.length > 0);
         }];
+        
     RAC(self.loginButton, enabled) = emailPasswordSignal;
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x)
     {
         [self.accountViewModel setCreditionals:self.emailTextView.text password:self.passwordTextView.text];
-        [[Router sharedInstance] openGames: self.accountViewModel];
+        [self login];
     }];
 }
 
+
+- (void)login
+{
+    self.greyView.hidden = NO;
+    [self.activityIndicator startAnimating];
+    [[[Router sharedInstance] openGames: self.accountViewModel] subscribeNext:^(id x)
+    {
+        self.greyView.hidden = YES;
+        [self.activityIndicator stopAnimating];
+    }
+    error:^(NSError *error)
+    {
+        self.greyView.hidden = YES;
+        [self.activityIndicator stopAnimating];
+        __block __weak LoginViewController *weakSelf = self;
+        [[Router sharedInstance] showError:error onViewController:self withTryAgainBlock:^
+        {
+            [weakSelf login];
+        }];
+    }];
+}
 
 @end

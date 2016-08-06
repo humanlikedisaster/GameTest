@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@class AccountViewModel;
+@class AccountViewModel, RACSignal;
 
 @interface Router : NSObject
 
 + (instancetype)sharedInstance;
-- (void)openGames: (AccountViewModel *)anAccountViewModel;
+- (RACSignal *)openGames: (AccountViewModel *)anAccountViewModel;
+- (void)showError:(NSError *)anError onViewController:(UIViewController *)anViewController withTryAgainBlock:(void (^)())tryAgainBlock;
 
 @end

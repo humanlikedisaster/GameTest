@@ -7,7 +7,10 @@
 //
 
 #import "GamesViewController.h"
+#import "GameViewModel.h"
 #import "GamesFeedViewModel.h"
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface GamesViewController ()
 
@@ -20,6 +23,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [RACObserve(self.feedViewModel, gameWorlds) subscribeNext:^(NSArray *worldArray)
+    {
+        [self.tableView reloadData];
+    }];
+}
+
+- (void)setGamesViewModel: (GamesFeedViewModel *)aGamesViewModel
+{
+    self.feedViewModel = aGamesViewModel;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"worldCell";
+ 
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+    GameViewModel *gameViewModel = self.feedViewModel.gameWorlds[indexPath.row];
+    cell.textLabel.text = gameViewModel.name;
+    cell.detailTextLabel.text = gameViewModel.worldStatus;
+
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)aSection
+{
+    return self.feedViewModel.gameWorlds.count;
 }
 
 @end

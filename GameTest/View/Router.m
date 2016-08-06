@@ -13,6 +13,8 @@
 #import "GamesViewController.h"
 #import "GamesFeedViewModel.h"
 
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 @interface Router ()
 
 @property (weak, nonatomic) UINavigationController *navigationController;
@@ -28,14 +30,51 @@
     dispatch_once(&onceToken, ^
     {
         router = [[Router alloc] init];
-        router.navigationController = [UIApplication sharedApplication].keyWindow.rootViewController.navigationController;
+        router.navigationController = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     });
     return router;
 }
 
-- (void)openGames: (AccountViewModel *)anAccountViewModel
+- (RACSignal *)openGames: (AccountViewModel *)anAccountViewModel
 {
-    GamesFeedViewModel *gamesFeedViewModel = [[GamesFeedViewModel alloc] initWithAccountViewModel:anAccountViewModel];
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber)
+    {
+        GamesFeedViewModel *gamesFeedViewModel = [[GamesFeedViewModel alloc] initWithAccountViewModel:anAccountViewModel];
+
+        [[[[RACObserve(gamesFeedViewModel.status, isLoaded) skip:1] take:1] deliverOnMainThread]
+        subscribeNext:^(NSNumber *isLoaded)
+        {
+            if ([isLoaded boolValue])
+            {
+                UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                GamesViewController *gamesViewController = (GamesViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"GamesViewController"];
+                [gamesViewController setGamesViewModel:gamesFeedViewModel];
+                [self.navigationController pushViewController:gamesViewController animated:YES];
+                [subscriber sendNext:gamesViewController];
+                [subscriber sendCompleted];
+            }
+            else
+            {
+                [subscriber sendError:gamesFeedViewModel.status.error];
+            }
+        }];
+        return nil;
+    }] deliverOnMainThread];
+
+}
+
+- (void)showError:(NSError *)anError onViewController:(UIViewController *)anViewController withTryAgainBlock:(void (^)())tryAgainBlock
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network error" message:@"There is network error, please try again!" preferredStyle:UIAlertControllerStyleAlert];
+
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+    {
+        tryAgainBlock();
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDestructive handler:nil]];
+
+    [anViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

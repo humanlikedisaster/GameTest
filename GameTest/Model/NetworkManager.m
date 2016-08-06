@@ -49,8 +49,16 @@ static NSString *kNetworkManagerFeedURL = @"http://backend1.lordsandknights.com/
                         NSPropertyListFormat format;
 
                         NSDictionary* plist = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:&format error:&parseError];
-                        [subscriber sendNext:plist];
-                        [subscriber sendCompleted];
+
+                        if (nil != plist[@"allAvailableWorlds"])
+                        {
+                            [subscriber sendNext:plist];
+                            [subscriber sendCompleted];
+                        }
+                        else
+                        {
+                            [subscriber sendError:[NSError errorWithDomain:@"download.worlds.error" code:-999 userInfo:plist]];
+                        }
                     }
                     else
                     {

@@ -12,11 +12,14 @@
 		426059611D554A1700145572 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4260595F1D554A1700145572 /* Main.storyboard */; };
 		426059631D554A1700145572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426059621D554A1700145572 /* Assets.xcassets */; };
 		426059661D554A1700145572 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426059641D554A1700145572 /* LaunchScreen.storyboard */; };
-		426059701D554AC500145572 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4260596F1D554AC500145572 /* ViewController.m */; };
+		426059701D554AC500145572 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4260596F1D554AC500145572 /* LoginViewController.m */; };
 		426059731D554C4600145572 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 426059721D554C4600145572 /* NetworkManager.m */; };
-		426059771D554C7100145572 /* FeedViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426059761D554C7100145572 /* FeedViewModel.m */; };
-		4260597B1D554C9000145572 /* GameViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4260597A1D554C9000145572 /* GameViewModel.m */; };
+		426059771D554C7100145572 /* AccountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426059761D554C7100145572 /* AccountViewModel.m */; };
+		4260597B1D554C9000145572 /* GamesFeedViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4260597A1D554C9000145572 /* GamesFeedViewModel.m */; };
 		4260597E1D554CB000145572 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4260597D1D554CB000145572 /* AccountManager.m */; };
+		426059811D55633900145572 /* GamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426059801D55633900145572 /* GamesViewController.m */; };
+		426059841D5565E900145572 /* Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 426059831D5565E900145572 /* Router.m */; };
+		426059871D556F6D00145572 /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 426059861D556F6D00145572 /* DeviceHelper.m */; };
 		8ABFC42C29EEF680688B4CC7 /* Pods_GameTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60684A37637293E743D74FDB /* Pods_GameTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,16 +33,22 @@
 		426059621D554A1700145572 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		426059651D554A1700145572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		426059671D554A1700145572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4260596E1D554AC500145572 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4260596F1D554AC500145572 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4260596E1D554AC500145572 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4260596F1D554AC500145572 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		426059711D554C4600145572 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = GameTest/Model/NetworkManager.h; sourceTree = SOURCE_ROOT; };
 		426059721D554C4600145572 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = GameTest/Model/NetworkManager.m; sourceTree = SOURCE_ROOT; };
-		426059751D554C7100145572 /* FeedViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedViewModel.h; path = ViewModel/FeedViewModel.h; sourceTree = "<group>"; };
-		426059761D554C7100145572 /* FeedViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedViewModel.m; path = ViewModel/FeedViewModel.m; sourceTree = "<group>"; };
-		426059791D554C9000145572 /* GameViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameViewModel.h; path = ViewModel/GameViewModel.h; sourceTree = "<group>"; };
-		4260597A1D554C9000145572 /* GameViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewModel.m; path = ViewModel/GameViewModel.m; sourceTree = "<group>"; };
+		426059751D554C7100145572 /* AccountViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountViewModel.h; path = ViewModel/AccountViewModel.h; sourceTree = "<group>"; };
+		426059761D554C7100145572 /* AccountViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountViewModel.m; path = ViewModel/AccountViewModel.m; sourceTree = "<group>"; };
+		426059791D554C9000145572 /* GamesFeedViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamesFeedViewModel.h; path = ViewModel/GamesFeedViewModel.h; sourceTree = "<group>"; };
+		4260597A1D554C9000145572 /* GamesFeedViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GamesFeedViewModel.m; path = ViewModel/GamesFeedViewModel.m; sourceTree = "<group>"; };
 		4260597C1D554CB000145572 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountManager.h; path = Model/AccountManager.h; sourceTree = "<group>"; };
 		4260597D1D554CB000145572 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountManager.m; path = Model/AccountManager.m; sourceTree = "<group>"; };
+		4260597F1D55633900145572 /* GamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamesViewController.h; sourceTree = "<group>"; };
+		426059801D55633900145572 /* GamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamesViewController.m; sourceTree = "<group>"; };
+		426059821D5565E900145572 /* Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Router.h; sourceTree = "<group>"; };
+		426059831D5565E900145572 /* Router.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Router.m; sourceTree = "<group>"; };
+		426059851D556F6D00145572 /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceHelper.h; path = Model/DeviceHelper.h; sourceTree = "<group>"; };
+		426059861D556F6D00145572 /* DeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceHelper.m; path = Model/DeviceHelper.m; sourceTree = "<group>"; };
 		60684A37637293E743D74FDB /* Pods_GameTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4E9381B9D3CD36ECE934FA /* Pods-GameTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameTest/Pods-GameTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,8 +128,12 @@
 		4260596D1D554AC500145572 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4260596E1D554AC500145572 /* ViewController.h */,
-				4260596F1D554AC500145572 /* ViewController.m */,
+				426059821D5565E900145572 /* Router.h */,
+				426059831D5565E900145572 /* Router.m */,
+				4260596E1D554AC500145572 /* LoginViewController.h */,
+				4260596F1D554AC500145572 /* LoginViewController.m */,
+				4260597F1D55633900145572 /* GamesViewController.h */,
+				426059801D55633900145572 /* GamesViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +145,8 @@
 				4260597D1D554CB000145572 /* AccountManager.m */,
 				426059711D554C4600145572 /* NetworkManager.h */,
 				426059721D554C4600145572 /* NetworkManager.m */,
+				426059851D556F6D00145572 /* DeviceHelper.h */,
+				426059861D556F6D00145572 /* DeviceHelper.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -139,10 +154,10 @@
 		426059781D554C7600145572 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				426059791D554C9000145572 /* GameViewModel.h */,
-				4260597A1D554C9000145572 /* GameViewModel.m */,
-				426059751D554C7100145572 /* FeedViewModel.h */,
-				426059761D554C7100145572 /* FeedViewModel.m */,
+				426059791D554C9000145572 /* GamesFeedViewModel.h */,
+				4260597A1D554C9000145572 /* GamesFeedViewModel.m */,
+				426059751D554C7100145572 /* AccountViewModel.h */,
+				426059761D554C7100145572 /* AccountViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -268,13 +283,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4260597B1D554C9000145572 /* GameViewModel.m in Sources */,
+				4260597B1D554C9000145572 /* GamesFeedViewModel.m in Sources */,
 				426059731D554C4600145572 /* NetworkManager.m in Sources */,
-				426059701D554AC500145572 /* ViewController.m in Sources */,
+				426059701D554AC500145572 /* LoginViewController.m in Sources */,
 				4260597E1D554CB000145572 /* AccountManager.m in Sources */,
-				426059771D554C7100145572 /* FeedViewModel.m in Sources */,
+				426059811D55633900145572 /* GamesViewController.m in Sources */,
+				426059771D554C7100145572 /* AccountViewModel.m in Sources */,
 				4260595B1D554A1700145572 /* AppDelegate.m in Sources */,
+				426059841D5565E900145572 /* Router.m in Sources */,
 				426059581D554A1700145572 /* main.m in Sources */,
+				426059871D556F6D00145572 /* DeviceHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

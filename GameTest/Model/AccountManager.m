@@ -8,6 +8,11 @@
 
 #import "AccountManager.h"
 
+@interface AccountManager()
+
+@end
+
 @implementation AccountManager
+
 
 @end

@@ -1,5 +1,5 @@
 //
-//  AccountManager.h
+//  DeviceHelper.h
 //  GameTest
 //
 //  Created by hereiam on 06.08.16.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AccountManager : NSObject
+@interface DeviceHelper : NSObject
 
-@property (nonatomic, copy) NSString *userName;
-@property (nonatomic, copy) NSString *userPassword;
++ (NSString *)deviceType;
++ (NSString *)deviceIdentifier;
 
 @end

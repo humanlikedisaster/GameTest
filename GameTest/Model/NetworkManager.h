@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class RACSignal;
+
 @interface NetworkManager : NSObject
+
+- (RACSignal *)getFeedWithUserName:(NSString *)anUserName password:(NSString *)aPassword;
 
 @end

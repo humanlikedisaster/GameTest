@@ -1,13 +1,13 @@
 //
-//  GameViewModel.h
+//  GamesViewController.h
 //  GameTest
 //
 //  Created by hereiam on 06.08.16.
 //  Copyright © 2016 TestGameView. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface GameViewModel : NSObject
+@interface GamesViewController : UITableViewController
 
 @end

@@ -1,13 +1,14 @@
 //
-//  FeedViewModel.h
+//  ViewController.h
 //  GameTest
 //
 //  Created by hereiam on 06.08.16.
 //  Copyright © 2016 TestGameView. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface FeedViewModel : NSObject
+@interface LoginViewController : UIViewController
 
 @end
+

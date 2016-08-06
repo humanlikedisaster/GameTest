@@ -48,7 +48,10 @@ static NSString *kAccountManagerServiceName = @"GameFeedTestServiceNameKeychain"
     [self logout];
     self.userName = anUserName;
     self.userPassword = anPassword;
-    [SAMKeychain setPassword:anPassword forService:kAccountManagerServiceName account:anUserName];
+    if (aSave)
+    {
+        [SAMKeychain setPassword:anPassword forService:kAccountManagerServiceName account:anUserName];
+    }
 }
 
 - (void)logout

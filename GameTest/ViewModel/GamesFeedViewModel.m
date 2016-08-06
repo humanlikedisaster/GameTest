@@ -47,6 +47,9 @@
     return self;
 }
 
+/** 
+  ViewModel can be deallocated only than login failed or then user tapped logout.
+*/
 - (void)dealloc
 {
     NSLog(@"GamesFeedViewModel deallocated");

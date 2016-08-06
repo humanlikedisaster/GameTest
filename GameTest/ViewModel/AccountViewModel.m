@@ -39,8 +39,7 @@
 
 - (void)setCreditionals:(NSString *)anUserName password:(NSString *)aPassword
 {
-    self.accountManager.userName = anUserName;
-    self.accountManager.userPassword = aPassword;
+    [self.accountManager setUserName:anUserName withPassword:aPassword];
 }
 
 - (NSString *)userName

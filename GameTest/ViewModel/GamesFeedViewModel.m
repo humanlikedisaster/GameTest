@@ -43,6 +43,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    NSLog(@"GamesFeedViewModel deallocated");
+}
+
 - (void)getGamesFeed
 {
     RACSignal *networkSignal = [self.networkManager getFeedWithUserName:self.accountViewModel.userName password:self.accountViewModel.password];

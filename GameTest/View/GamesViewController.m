@@ -29,6 +29,16 @@
     }];
 }
 
+- (void)viewDidDisappear:(BOOL)anAnimated
+{
+    self.feedViewModel = nil;
+}
+
+- (void)dealloc
+{
+    NSLog(@"GamesViewController was dealloceted");
+}
+
 - (void)setGamesViewModel: (GamesFeedViewModel *)aGamesViewModel
 {
     self.feedViewModel = aGamesViewModel;

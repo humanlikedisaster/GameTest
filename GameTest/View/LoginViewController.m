@@ -29,6 +29,7 @@
     [super viewDidLoad];
     
     self.accountViewModel = [[AccountViewModel alloc] init];
+
     RACSignal *emailPasswordSignal = [RACSignal combineLatest:
         @[self.emailTextView.rac_textSignal, self.passwordTextView.rac_textSignal]
         reduce:^id(NSString *emailText, NSString *passwordText)
@@ -42,6 +43,16 @@
         [self.accountViewModel setCreditionals:self.emailTextView.text password:self.passwordTextView.text];
         [self login];
     }];
+
+    BOOL isLogined = (self.accountViewModel.userName.length > 0 && self.accountViewModel.password.length > 0);
+    if (isLogined)
+    {
+        self.emailTextView.text = self.accountViewModel.userName;
+        [self.emailTextView sendActionsForControlEvents:UIControlEventEditingChanged];
+        self.passwordTextView.text = self.accountViewModel.password;
+        [self.passwordTextView sendActionsForControlEvents:UIControlEventEditingChanged];
+        [self login];
+    }
 }
 
 

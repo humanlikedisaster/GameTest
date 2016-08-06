@@ -10,7 +10,9 @@
 
 @interface AccountManager : NSObject
 
-@property (nonatomic, copy) NSString *userName;
-@property (nonatomic, copy) NSString *userPassword;
+@property (copy ,nonatomic, readonly) NSString *userName;
+@property (copy, nonatomic, readonly) NSString *userPassword;
+
+- (void)setUserName:(NSString *)anUserName withPassword:(NSString *)anPassword;
 
 @end

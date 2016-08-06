@@ -4,5 +4,6 @@ use_frameworks!
 target 'GameTest' do
 
 pod 'ReactiveCocoa'
+pod 'SAMKeychain'
 
 end

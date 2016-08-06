@@ -35,7 +35,7 @@
     return router;
 }
 
-- (RACSignal *)openGames: (AccountViewModel *)anAccountViewModel
+- (RACSignal *)openGames:(AccountViewModel *)anAccountViewModel
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber)
     {

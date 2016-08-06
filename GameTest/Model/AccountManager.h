@@ -13,6 +13,7 @@
 @property (copy ,nonatomic, readonly) NSString *userName;
 @property (copy, nonatomic, readonly) NSString *userPassword;
 
-- (void)setUserName:(NSString *)anUserName withPassword:(NSString *)anPassword;
+- (void)setUserName:(NSString *)anUserName withPassword:(NSString *)anPassword save:(BOOL)aSave;
+- (void)logout;
 
 @end

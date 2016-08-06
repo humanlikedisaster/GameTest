@@ -50,6 +50,7 @@
 - (void)dealloc
 {
     NSLog(@"GamesFeedViewModel deallocated");
+    [self.accountViewModel logout];
 }
 
 #pragma mark - Private

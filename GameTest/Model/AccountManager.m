@@ -43,16 +43,22 @@ static NSString *kAccountManagerServiceName = @"GameFeedTestServiceNameKeychain"
 
 #pragma mark - Public
 
-- (void)setUserName:(NSString *)anUserName withPassword:(NSString *)anPassword
+- (void)setUserName:(NSString *)anUserName withPassword:(NSString *)anPassword save:(BOOL)aSave
+{
+    [self logout];
+    self.userName = anUserName;
+    self.userPassword = anPassword;
+    [SAMKeychain setPassword:anPassword forService:kAccountManagerServiceName account:anUserName];
+}
+
+- (void)logout
 {
     if (self.userName.length > 0)
     {
         [SAMKeychain deletePasswordForService:kAccountManagerServiceName account:self.userName];
     }
-
-    self.userName = anUserName;
-    self.userPassword = anPassword;
-    [SAMKeychain setPassword:anPassword forService:kAccountManagerServiceName account:anUserName];
+    self.userName = nil;
+    self.userPassword = nil;
 }
 
 @end

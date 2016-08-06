@@ -43,9 +43,14 @@
 
 #pragma mark - Public
 
-- (void)setCreditionals:(NSString *)anUserName password:(NSString *)aPassword
+- (void)setCreditionals:(NSString *)anUserName password:(NSString *)aPassword save:(BOOL)aSave
 {
-    [self.accountManager setUserName:anUserName withPassword:aPassword];
+    [self.accountManager setUserName:anUserName withPassword:aPassword save:aSave];
+}
+
+- (void)logout
+{
+    [self.accountManager logout];
 }
 
 #pragma mark - Getters

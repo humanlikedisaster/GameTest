@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextView;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIView *greyView;
+@property (weak, nonatomic) IBOutlet UISwitch *saveSwitch;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) AccountViewModel *accountViewModel;
 
@@ -42,7 +43,7 @@
     RAC(self.loginButton, enabled) = emailPasswordSignal;
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x)
     {
-        [self.accountViewModel setCreditionals:self.emailTextView.text password:self.passwordTextView.text];
+        [self.accountViewModel setCreditionals:self.emailTextView.text password:self.passwordTextView.text save:self.saveSwitch.on];
         [self login];
     }];
 
@@ -53,8 +54,17 @@
         [self.emailTextView sendActionsForControlEvents:UIControlEventEditingChanged];
         self.passwordTextView.text = self.accountViewModel.password;
         [self.passwordTextView sendActionsForControlEvents:UIControlEventEditingChanged];
+        self.saveSwitch.on = YES;
         [self login];
     }
+}
+
+- (void)viewDidDisappear:(BOOL)anAnimated
+{
+    self.emailTextView.text = @"";
+    self.passwordTextView.text = @"";
+    [self.emailTextView sendActionsForControlEvents:UIControlEventEditingChanged];
+    [self.passwordTextView sendActionsForControlEvents:UIControlEventEditingChanged];
 }
 
 #pragma mark - Private

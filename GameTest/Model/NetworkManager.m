@@ -38,15 +38,18 @@ static NSString *kNetworkManagerFeedURL = @"http://backend1.lordsandknights.com/
         {
             NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:kNetworkManagerFeedURL]];
             urlRequest.HTTPMethod = @"POST";
-            [urlRequest setValue:anUserName forHTTPHeaderField:@"login"];
-            [urlRequest setValue:aPassword forHTTPHeaderField:@"password"];
-            [urlRequest setValue:[DeviceHelper deviceType] forHTTPHeaderField:@"deviceType"];
-            [urlRequest setValue:[DeviceHelper deviceIdentifier] forHTTPHeaderField:@"deviceId"];
+            NSString *httpBody = [NSString stringWithFormat:@"login=%@&password=%@&deviceType=%@&deviceType=&@&deviceId=%@",
+                anUserName, aPassword, [DeviceHelper deviceType], [DeviceHelper deviceIdentifier]];
+            [urlRequest setHTTPBody:[httpBody dataUsingEncoding:NSUTF8StringEncoding]];
             self.dataTask = [self.urlSession dataTaskWithRequest:urlRequest completionHandler:^ (NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
                 {
                     if (nil == error)
                     {
-                        [subscriber sendNext:data];
+                        NSError *parseError;
+                        NSPropertyListFormat format;
+
+                        NSDictionary* plist = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:&format error:&parseError];
+                        [subscriber sendNext:plist];
                         [subscriber sendCompleted];
                     }
                     else
